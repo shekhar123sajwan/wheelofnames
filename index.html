@@ -13,31 +13,74 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-    <style>body,html{font-size:14px;margin:0;padding:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}body,br,h1,h2,h3,h4,h5,html,p,span{padding:0;margin:0;font-family:"Merienda One",cursive}body{position:relative}#canvasWheel{width:100%;object-fit:contain}#canvasWheel{position:relative;z-index:1;cursor:pointer}</style>
+   <style>body,html{font-size:14px;margin:0;padding:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}.navbar-brand,.navbar-nav>li>a{color:#fff}.nav>li>a:focus,.nav>li>a:hover{background-color:transparent}.navbar-nav>li:hover{background:#49afff}.navbar-right{padding-top:5px}.navbar{margin-bottom:0!important}.navbar-toggle .icon-bar{color:#fff!important;border-color:#fff!important;border:1px solid #fff}.navbar-header{margin:5px!important}.navbar{border-radius:0;width:100%;background-color:#49afff}.navbar-nav>li>a{padding-top:5px;padding-bottom:5px;font-weight:700}.nav>li>a{padding:15px 12px}.navbar-brand{display:inline-flex;justify-content:center;align-items:center;line-height:15px!important}.header li a{display:block;color:#fff;text-align:center;text-decoration:none}</style>
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <div class="container-fluid" id="wheelofnames">
-            <div class="row">  
+     <header class="header">
+        <nav class="navbar">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle hidden" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Wheel Of Names</a>
+            </div>
 
-             <div class="col-xs-12" id="canvasleft"> 
-                <td align="center" >
-                    <canvas class="wheel" id="canvasWheel" 
-                    width="600" height="600"  
-                    data-responsiveMinWidth="180"
-                    data-responsiveScaleHeight="true"  
-                    data-responsiveMargin="50"
-                    onclick="startSpin();">
-                    Not supported, use another browser.
-                </canvas>
-            </td>
-        </div>
+            <div class="collapse navbar-collapse hidden" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">  
+                </ul>
+            </div>
 
+        </nav>
 
+    </header> 
+ 
+
+  <div class="main-wrapper">
+    <div class="container-fluid" id="nameWheelHome">
+        <div class="row"> 
+           <h1 class="mtb-10 text-center">Spin the Wheel Generator Tool</h1>
+           <p class="text-center">- Best Wheel Spinning Online Tool</p> <hr>
+           <div class="col-md-6 col-xs-12" id="canvasleft"> 
+               <td align="center" >
+                <canvas class="wheel" id="randomNameWheel" 
+                width="600" height="600"  
+                data-responsiveMinWidth="180"
+                data-responsiveScaleHeight="true"  
+                data-responsiveMargin="50"
+                onclick="startSpin();">
+                Canvas not supported, use another browser.
+            </canvas>
+        </td>
     </div>
-</div>
-</div>  
+
+
+    <div class="col-md-6 col-xs-12 right-side">
+        <div class="col-xs-6">
+            <form name="addSegment">
+                <div class="form-group">
+                    <label for="ranNames">
+                        <h2 class="mtb-10 text-left">Add Names</h2>
+                    </label>
+                    <textarea class="form-control namesList" name="namesForWheel" id="namesForWheel" rows="5">Kalu
+Rock
+Smith
+John
+Ram
+Joe</textarea>
+                </div>
+                <button class="btn btn-success mb-5" type="button" onclick="addSegments();">Add Names</button>
+                <button class="btn btn-danger mb-5" type="button" onclick="resetfunction();">Reset Wheel</button>
+            </form>
+     </div>
+         </div>
+     </div>
+   </div>
+ </div>
+         
+         
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
